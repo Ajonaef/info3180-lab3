@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Contact Form</h2>
+<p>Fill in this form to contact the site owners.</p>
+
+<form method="POST">
+    {{ form.hidden_tag() }}  <!-- This includes CSRF token -->
+    
+    <p>{{ form.name.label }} (Required)</p>
+    <p>{{ form.name }}</p>
+
+    <p>{{ form.email.label }} (Required)</p>
+    <p>{{ form.email }}</p>
+
+    <p>{{ form.subject.label }} (Required)</p>
+    <p>{{ form.subject }}</p>
+
+    <p>{{ form.message.label }} (Required)</p>
+    <p>{{ form.message }}</p>
+
+    <p>{{ form.submit(class="btn btn-primary") }}</p>
+</form>
+{% endblock %}
